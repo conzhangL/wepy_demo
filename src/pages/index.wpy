@@ -1,6 +1,26 @@
 <template>
   <view class="container">
 
+    <view class="bc">
+        <view class="discover_list">
+            <navigator class="item" open-type="navigate">
+                <image class="header_img" src="http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg" />
+            </navigator>
+        </view>
+    </view>
+
+    <view class="info_block">
+      <navigator class="item" url="/pages/index">
+        <view class="item_content">
+          <view class="text">公司简介</view>
+        </view>
+      </navigator>
+      <view class="text"> 
+      <text >京东JD.COM-专业的综合网上购物商城，销售超数万品牌、4020万种商品，囊括家电、手机、电脑、母婴、服装等13大品类。秉承客户为先的理念，京东所售商品为正品行货、全国联保、机打发票。
+      </text></view>
+    </view>
+
+
     <swiper class="swiper" indicator-active-color="{{indicatorActiveColor}}" indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular="true">
       <block wx:for="{{adList}}" wx:key="key">
         <swiper-item>
@@ -28,6 +48,8 @@
       </navigator>
     </view>
     
+    
+
     <view class="bc">
         <view class="discover_list">
             <navigator class="item" open-type="navigate" wx:for="{{aplist}}" wx:key="item">
@@ -36,6 +58,7 @@
                     <view>{{item.attrName}}：</view>
                     <view>{{item.attrVal}} </view>
                 </view>
+                
             </navigator>
         </view>
         
@@ -121,6 +144,7 @@ export default class Index extends wepy.page {
   height: 348rpx;
 }
 
+
 .slide-image {
   width: 100%;
   height: 100%;
@@ -193,7 +217,10 @@ export default class Index extends wepy.page {
   background: #f7f7f7;
 }
 
-
+.header_img{
+  width: 100%;
+  height: 500rpx;
+}
 .discover_list {
   .discover_img {
     width: 100%;
@@ -216,5 +243,44 @@ export default class Index extends wepy.page {
 
 .bc {
   background: #f7f7f7;
+}
+
+.info_block {
+  margin-top: 10rpx;
+  .item {
+    border-top: 3rpx solid #dbdbdb;
+    background: #fff;
+    padding: 34rpx 28rpx;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 3rpx solid #dbdbdb;
+  }
+  .item:last-child {
+    border-bottom: 1rpx solid #dbdbdb;
+  }
+  .item_content {
+    display: flex;
+    align-items: center;
+    .text {
+      margin-left: 20rpx;
+      color: #1a1a1a;
+      font-size:16
+    }
+  }
+  .item_img {
+    width: 42rpx;
+    height: 42rpx;
+  }
+  .arrow {
+    color: #cccccc;
+    font-size: 32rpx;
+  }
+  .tip {
+    color: #999;
+    font-size: 24rpx;
+    margin-top: 20rpx;
+    margin-left: 60rpx;
+  }
 }
 </style>
