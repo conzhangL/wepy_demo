@@ -1,14 +1,23 @@
 <template>
   <view class="container">
 
-    <view class="bc">
+    <!-- <view class="bc">
         <view class="discover_list">
             <navigator class="item" open-type="navigate">
                 <image class="header_img" src="http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg" />
             </navigator>
         </view>
-    </view>
+    </view> -->
 
+
+    <swiper class="swiper" indicator-active-color="{{indicatorActiveColor}}" indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular="true">
+      <block wx:for="{{adList}}" wx:key="key">
+        <swiper-item>
+          <image src="{{item.picUrl}}" class="slide-image" />
+        </swiper-item>
+      </block>
+    </swiper>
+    
     <view class="info_block">
       <navigator class="item" url="/pages/index">
         <view class="item_content">
@@ -21,15 +30,15 @@
     </view>
 
 
-    <swiper class="swiper" indicator-active-color="{{indicatorActiveColor}}" indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular="true">
+    <!-- <swiper class="swiper" indicator-active-color="{{indicatorActiveColor}}" indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular="true">
       <block wx:for="{{adList}}" wx:key="key">
         <swiper-item>
           <image src="{{item.picUrl}}" class="slide-image" />
         </swiper-item>
       </block>
-    </swiper>
+    </swiper> -->
 
-    <view class="nav_list">
+    <!-- <view class="nav_list">
       <navigator open-type="navigate" url="/pages/index">
         <image src="../images/icon_nav_01_new.png" class="nav_icon"></image>
         <view class="nav_text">签到有礼</view>
@@ -46,19 +55,26 @@
         <image src="../images/icon_nav_04_new.png" class="nav_icon"></image>
         <view class="nav_text">我要补货</view>
       </navigator>
+    </view> -->
+    
+    
+    <view class="info_block">
+      <navigator class="item" url="/pages/index">
+        <view class="item_content">
+          <view class="text">经典案例</view>
+        </view>
+      </navigator>
+
     </view>
-    
-    
 
     <view class="bc">
         <view class="discover_list">
             <navigator class="item" open-type="navigate" wx:for="{{aplist}}" wx:key="item">
-                <image class="discover_img" src="{{item.logo}}" />
-                <view class="info" wx:for="{{item.attrs}}" wx:key="item">
+              <view class="info" wx:for="{{item.attrs}}" wx:key="item">
                     <view>{{item.attrName}}：</view>
                     <view>{{item.attrVal}} </view>
                 </view>
-                
+                <image class="discover_img" src="{{item.logo}}" /> 
             </navigator>
         </view>
         
@@ -67,15 +83,13 @@
   </view>
 </template>
 <script>
-import wepy from 'wepy'
+import wepy from "wepy";
 
 export default class Index extends wepy.page {
   config = {
-    navigationBarTitleText: '演示商城',
-  }
-  components = {
-    
-  }
+    navigationBarTitleText: "贵州博乐幼教"
+  };
+  components = {};
   data = {
     indicatorDots: true,
     autoplay: true,
@@ -95,55 +109,61 @@ export default class Index extends wepy.page {
     preventRepeatReuqest: false,
     //广告列表
     adList: [
-      {picUrl: 'http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg'},
-      {picUrl: 'http://img06.tooopen.com/images/20160818/tooopen_sy_175866434296.jpg'},
-      {picUrl: 'http://img06.tooopen.com/images/20160818/tooopen_sy_175833047715.jpg'}
+      {
+        picUrl:
+          "../images/base/pvc4.jpg"
+      },
+      {
+        picUrl:
+          "../images/base/inner4.jpg"
+      },
+      {
+        picUrl:
+          "../images/base/out3.jpg"
+      }
     ],
     tps: 0,
     is_show_alert: true,
     aplist: [
       {
-        logo: 'http://sujiefs.com/upload/images/20180322/201803221134300716543.jpg',
-        code: '',
-        attrs: [
-          {attrName: '品牌',attrVal: '素洁'},
-          {attrName: '年份季节',attrVal: '2018春季新款'}
-        ]
-      },{
-        logo: 'http://sujiefs.com/upload/images/20180319/201803191401583397599.jpg',
-        code: '',
-        attrs: [
-          {attrName: '品牌',attrVal: '素洁'},
-          {attrName: '年份季节',attrVal: '2018全新升级版'},
-        ]
-      },{
-        logo: 'http://sujiefs.com/upload/images/20180308/201803081427506631167.jpg',
-        code: '',
-        attrs: [
-          {attrName: '品牌',attrVal: '素洁'},
-          {attrName: '年份季节',attrVal: '2017冬季'},
-        ]
+        logo:
+          "../images/base/pvc2.jpg",
+        code: "",
+        attrs: [{ attrName: "案例1", attrVal: "PVC" }]
+      },
+      {
+        logo:
+          "../images/base/inner3.jpg",
+        code: "",
+        attrs: [{ attrName: "案例2", attrVal: "室内家具" }]
+      },
+      {
+        logo:
+          "../images/base/cao2.jpg",
+        code: "",
+
+        attrs: [{ attrName: "案例3", attrVal: "人造草坪" }]
+      },
+      {
+        logo:
+          "../images/base/out7.jpg",
+        code: "",
+
+        attrs: [{ attrName: "案例4", attrVal: "大型户外玩具" }]
       }
     ]
-  }
-  
-  
-  onLoad() {
-    
-  }
-  computed = {}
-  methods = {
-    
-  }
-  events = {}
-  
+  };
+
+  onLoad() {}
+  computed = {};
+  methods = {};
+  events = {};
 }
 </script>
 <style lang="less">
 .swiper {
-  height: 348rpx;
+  height: 600rpx;
 }
-
 
 .slide-image {
   width: 100%;
@@ -174,7 +194,6 @@ export default class Index extends wepy.page {
   }
 }
 
-
 .nav_list {
   color: #404040;
   display: flex;
@@ -182,7 +201,7 @@ export default class Index extends wepy.page {
   justify-content: space-between;
   padding: 17rpx 50rpx;
   navigator {
-    text-align: center
+    text-align: center;
   }
   .nav_icon {
     height: 80rpx;
@@ -191,7 +210,7 @@ export default class Index extends wepy.page {
     margin-bottom: 14rpx;
   }
   .nav_text {
-    font-size: 26rpx
+    font-size: 26rpx;
   }
 }
 
@@ -200,7 +219,6 @@ export default class Index extends wepy.page {
   text-align: center;
   color: #333;
 }
-
 
 .discover {
   text-align: center;
@@ -217,14 +235,14 @@ export default class Index extends wepy.page {
   background: #f7f7f7;
 }
 
-.header_img{
+.header_img {
   width: 100%;
   height: 500rpx;
 }
 .discover_list {
   .discover_img {
     width: 100%;
-    height: 390rpx;
+    height: 500rpx;
   }
   .info {
     padding: 5rpx;
@@ -265,7 +283,7 @@ export default class Index extends wepy.page {
     .text {
       margin-left: 20rpx;
       color: #1a1a1a;
-      font-size:16
+      font-size: 16;
     }
   }
   .item_img {
