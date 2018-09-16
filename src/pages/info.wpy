@@ -1,0 +1,243 @@
+<template>
+  <view class="container">
+
+    <view class="bc">
+        <view class="discover_list">
+            <navigator class="item" open-type="navigate">
+                <image class="header_img" src="https://lg-brsj9y76-1257636768.cos.ap-shanghai.myqcloud.com/main.jpg" />
+            </navigator>
+        </view>
+    </view> 
+
+    
+    <!-- <view class="info_block">
+      <navigator class="item" url="/pages/index">
+        <view class="item_content">
+          <view class="text">经典案例</view>
+        </view>
+      </navigator>
+    </view>-->
+
+  </view>
+</template>
+<script>
+import wepy from "wepy";
+
+export default class Index extends wepy.page {
+  config = {
+    navigationBarTitleText: "贵州博乐幼教"
+  };
+  components = {};
+  data = {
+    indicatorDots: true,
+    autoplay: true,
+    interval: 3000,
+    duration: 1000,
+    indicatorActiveColor: "#fff",
+    discoverList: [],
+    //是否有数据
+    is_empty: false,
+    //当前页面
+    currentPage: 1,
+    //总页数
+    page_total: 0,
+    //是否显示 底部loading
+    showLoading: true,
+    //防止重复加载
+    preventRepeatReuqest: false,
+    //广告列表
+    adList: [
+      {
+        picUrl:
+          "../images/base/pvc4.jpg"
+      },
+      {
+        picUrl:
+          "../images/base/inner4.jpg"
+      },
+      {
+        picUrl:
+          "../images/base/out3.jpg"
+      }
+    ],
+    tps: 0,
+    is_show_alert: true,
+    aplist: [
+      {
+        logo:
+          "../images/base/pvc2.jpg",
+        code: "",
+        attrs: [{ attrName: "案例1", attrVal: "PVC" }]
+      },
+      {
+        logo:
+          "../images/base/inner3.jpg",
+        code: "",
+        attrs: [{ attrName: "案例2", attrVal: "室内家具" }]
+      },
+      {
+        logo:
+          "../images/base/cao2.jpg",
+        code: "",
+
+        attrs: [{ attrName: "案例3", attrVal: "人造草坪" }]
+      },
+      {
+        logo:
+          "../images/base/out7.jpg",
+        code: "",
+
+        attrs: [{ attrName: "案例4", attrVal: "大型户外玩具" }]
+      }
+    ]
+  };
+
+  onLoad() {}
+  computed = {};
+  methods = {};
+  events = {};
+}
+</script>
+<style lang="less">
+.swiper {
+  height: 600rpx;
+}
+
+.slide-image {
+  width: 100%;
+  height: 100%;
+}
+
+.pos {
+  position: absolute;
+  top: 0rpx;
+  left: 0;
+  right: 0;
+  .search_content {
+    background: rgba(0, 0, 0, 0.1);
+    border: 1px solid #efefee;
+    .icon-search,
+    .search_input {
+      color: #efefee;
+    }
+  }
+  .message {
+    display: block;
+    text-align: center;
+    margin-left: 20rpx;
+  }
+  .doc {
+    font-size: 16rpx;
+    display: block;
+  }
+}
+
+.nav_list {
+  color: #404040;
+  display: flex;
+  font-size: 26rpx;
+  justify-content: space-between;
+  padding: 17rpx 50rpx;
+  navigator {
+    text-align: center;
+  }
+  .nav_icon {
+    height: 80rpx;
+    margin: 0 auto;
+    width: 80rpx;
+    margin-bottom: 14rpx;
+  }
+  .nav_text {
+    font-size: 26rpx;
+  }
+}
+
+.recommend-title {
+  padding: 40rpx 0;
+  text-align: center;
+  color: #333;
+}
+
+.discover {
+  text-align: center;
+  font-size: 30rpx;
+  padding: 30rpx 0rpx;
+  position: relative;
+}
+
+.discover_title_doc {
+  display: inline-block;
+  position: relative;
+  z-index: 999;
+  width: 190rpx;
+  background: #f7f7f7;
+}
+
+.header_img {
+  width: 100%;
+  height: 1000rpx;
+}
+.discover_list {
+  .discover_img {
+    width: 100%;
+    height: 500rpx;
+  }
+  .info {
+    padding: 5rpx;
+    color: #000000;
+    font-size: 26rpx;
+    line-height: 35rpx;
+    display: flex;
+    align-items: center;
+  }
+  .item {
+    background: #fff;
+    padding: 15rpx;
+    margin-bottom: 15rpx;
+  }
+}
+
+.bc {
+  background: #f7f7f7;
+}
+
+.info_block {
+  margin-top: 10rpx;
+  .item {
+    
+    background: #fff;
+    padding: 34rpx 28rpx;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 5rpx solid #dbdbdb;
+  }
+  .item:last-child {
+    border-bottom: 1rpx solid #dbdbdb;
+  }
+  .item_content {
+    display: flex;
+    align-items: center;
+    .text {
+      margin-left: 0rpx;
+      color: #029AE5;
+      font-size: 16;
+    }
+  }
+
+  .item_img {
+    width: 42rpx;
+    height: 42rpx;
+  }
+  .arrow {
+    color: #cccccc;
+    font-size: 32rpx;
+  }
+  .tip {
+    color: #999;
+    font-size: 24rpx;
+    margin-top: 20rpx;
+    margin-left: 60rpx;
+  }
+}
+</style>

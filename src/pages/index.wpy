@@ -19,14 +19,13 @@
     </swiper>
     
     <view class="info_block">
-      <navigator class="item" url="/pages/index">
+      <navigator class="item">
         <view class="item_content">
           <view class="text">公司简介</view>
         </view>
       </navigator>
-      <view class="text"> 
-      <text >京东JD.COM-专业的综合网上购物商城，销售超数万品牌、4020万种商品，囊括家电、手机、电脑、母婴、服装等13大品类。秉承客户为先的理念，京东所售商品为正品行货、全国联保、机打发票。
-      </text></view>
+      <text decode="{{true}}">&emsp;&emsp;京东JD.COM-专业的综合网上购物商城，销售超数万品牌、4020万种商品，囊括家电、手机、电脑、母婴、服装等13大品类。秉承客户为先的理念，京东所售商品为正品行货、全国联保、机打发票。</text>
+      
     </view>
 
 
@@ -59,7 +58,7 @@
     
     
     <view class="info_block">
-      <navigator class="item" url="/pages/index">
+      <navigator class="item">
         <view class="item_content">
           <view class="text">经典案例</view>
         </view>
@@ -69,7 +68,7 @@
 
     <view class="bc">
         <view class="discover_list">
-            <navigator class="item" open-type="navigate" wx:for="{{aplist}}" wx:key="item">
+            <navigator class="item" open-type="navigate" wx:for="{{aplist}}" wx:key="item" url="/pages/case1_info?code={{item.code}}">
               <view class="info" wx:for="{{item.attrs}}" wx:key="item">
                     <view>{{item.attrName}}：</view>
                     <view>{{item.attrVal}} </view>
@@ -111,15 +110,18 @@ export default class Index extends wepy.page {
     adList: [
       {
         picUrl:
-          "../images/base/pvc4.jpg"
+          "https://lg-brsj9y76-1257636768.cos.ap-shanghai.myqcloud.com/pvc4.jpg"
       },
       {
         picUrl:
-          "../images/base/inner4.jpg"
+          "https://lg-brsj9y76-1257636768.cos.ap-shanghai.myqcloud.com/inner4.jpg"
       },
       {
         picUrl:
-          "../images/base/out3.jpg"
+          "https://lg-brsj9y76-1257636768.cos.ap-shanghai.myqcloud.com/out3.jpg"
+      },{
+        picUrl:
+          "https://lg-brsj9y76-1257636768.cos.ap-shanghai.myqcloud.com/pvcout1.jpg"
       }
     ],
     tps: 0,
@@ -127,29 +129,29 @@ export default class Index extends wepy.page {
     aplist: [
       {
         logo:
-          "../images/base/pvc2.jpg",
-        code: "",
-        attrs: [{ attrName: "案例1", attrVal: "PVC" }]
+          "https://lg-brsj9y76-1257636768.cos.ap-shanghai.myqcloud.com/pvc2.jpg",
+        code: "pvc",
+        attrs: [{ attrName: "案例", attrVal: "PVC装修 -> 一站式服务" }]
       },
       {
         logo:
-          "../images/base/inner3.jpg",
-        code: "",
-        attrs: [{ attrName: "案例2", attrVal: "室内家具" }]
+          "https://lg-brsj9y76-1257636768.cos.ap-shanghai.myqcloud.com/inner3.jpg",
+        code: "inner",
+        attrs: [{ attrName: "案例", attrVal: "室内家具 -> 一站式服务" }]
       },
       {
         logo:
-          "../images/base/cao2.jpg",
-        code: "",
+          "https://lg-brsj9y76-1257636768.cos.ap-shanghai.myqcloud.com/cao2.jpg",
+        code: "cao",
 
-        attrs: [{ attrName: "案例3", attrVal: "人造草坪" }]
+        attrs: [{ attrName: "案例", attrVal: "人造草坪 -> 一站式服务" }]
       },
       {
         logo:
-          "../images/base/out7.jpg",
-        code: "",
+          "https://lg-brsj9y76-1257636768.cos.ap-shanghai.myqcloud.com/out7.jpg",
+        code: "out",
 
-        attrs: [{ attrName: "案例4", attrVal: "大型户外玩具" }]
+        attrs: [{ attrName: "案例", attrVal: "大型户外玩具 -> 一站式服务" }]
       }
     ]
   };
@@ -237,7 +239,7 @@ export default class Index extends wepy.page {
 
 .header_img {
   width: 100%;
-  height: 500rpx;
+  height: 600rpx;
 }
 .discover_list {
   .discover_img {
@@ -266,24 +268,23 @@ export default class Index extends wepy.page {
 .info_block {
   margin-top: 10rpx;
   .item {
-    border-top: 3rpx solid #dbdbdb;
     background: #fff;
     padding: 34rpx 28rpx;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    border-bottom: 3rpx solid #dbdbdb;
+    border-bottom: 5rpx solid #dbdbdb;
   }
   .item:last-child {
-    border-bottom: 1rpx solid #dbdbdb;
+    border-bottom:5rpx solid #dbdbdb;
   }
   .item_content {
     display: flex;
     align-items: center;
     .text {
-      margin-left: 20rpx;
-      color: #1a1a1a;
-      font-size: 16;
+      margin-left: 0rpx;
+      color: #029AE5;
+      font-size: 30;
     }
   }
   .item_img {

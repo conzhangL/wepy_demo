@@ -1,0 +1,288 @@
+<template>
+  <view class="container">
+
+    <view class="info_block">
+      <navigator class="item">
+        <view class="item_content">
+          <view class="text">{{subTitle[catCode]}}</view>
+        </view>
+      </navigator>
+
+    </view>
+
+    <view class="bc">
+        <view class="discover_list">
+            <navigator class="item" open-type="navigate" wx:for="{{caseInfo1[catCode]}}" wx:key="item" url="/pages/case1_info?code={{1}}">
+                <image class="discover_img" src="{{item.logo}}" /> 
+            </navigator>
+        </view>
+        
+    </view>
+
+  </view>
+</template>
+<script>
+import wepy from "wepy";
+
+export default class Index extends wepy.page {
+  config = {
+    navigationBarTitleText: "贵州博乐幼教"
+  };
+  components = {};
+  data = {
+    catCode: "",
+    subTitle:{
+        cao:"案例:人造草坪 -> 一站式服务",
+        inner:"案例:室内家具 -> 一站式服务",
+        out:"案例:大型户外玩具 -- 一站式服务",
+        pvc:"案例:PVC装修 -> 一站式服务",
+    },
+
+    caseInfo1:{
+        pvc: [
+                {
+                    logo:
+                    "https://lg-brsj9y76-1257636768.cos.ap-shanghai.myqcloud.com/pvc1.jpg",
+                    code: "",
+                    attrs: [{ attrName: "案例1", attrVal: "PVC" }]
+                },
+                {
+                    logo:
+                    "https://lg-brsj9y76-1257636768.cos.ap-shanghai.myqcloud.com/pvc2.jpg",
+                    code: "",
+                    attrs: [{ attrName: "案例2", attrVal: "室内家具" }]
+                },
+                {
+                    logo:
+                    "https://lg-brsj9y76-1257636768.cos.ap-shanghai.myqcloud.com/pvc3.jpg",
+                    code: "",
+
+                    attrs: [{ attrName: "案例3", attrVal: "人造草坪" }]
+                },
+                {
+                    logo:
+                    "https://lg-brsj9y76-1257636768.cos.ap-shanghai.myqcloud.com/pvc4.jpg",
+                    code: "",
+
+                    attrs: [{ attrName: "案例4", attrVal: "大型户外玩具" }]
+                }
+            ],
+        cao: [
+                {
+                    logo:
+                    "https://lg-brsj9y76-1257636768.cos.ap-shanghai.myqcloud.com/cao1.jpg",
+                    code: "",
+                    attrs: [{ attrName: "案例1", attrVal: "PVC" }]
+                },
+                {
+                    logo:
+                    "https://lg-brsj9y76-1257636768.cos.ap-shanghai.myqcloud.com/cao2.jpg",
+                    code: "",
+                    attrs: [{ attrName: "案例2", attrVal: "室内家具" }]
+                },
+                {
+                    logo:
+                    "https://lg-brsj9y76-1257636768.cos.ap-shanghai.myqcloud.com/cao3.jpg",
+                    code: "",
+
+                    attrs: [{ attrName: "案例3", attrVal: "人造草坪" }]
+                },
+                {
+                    logo:
+                    "https://lg-brsj9y76-1257636768.cos.ap-shanghai.myqcloud.com/cao4.jpg",
+                    code: "",
+
+                    attrs: [{ attrName: "案例4", attrVal: "大型户外玩具" }]
+                }
+            ],
+            inner: [
+                {
+                    logo:
+                    "https://lg-brsj9y76-1257636768.cos.ap-shanghai.myqcloud.com/inner1.jpg",
+                    code: "",
+                    attrs: [{ attrName: "案例1", attrVal: "PVC" }]
+                },
+                {
+                    logo:
+                    "https://lg-brsj9y76-1257636768.cos.ap-shanghai.myqcloud.com/inner2.jpg",
+                    code: "",
+                    attrs: [{ attrName: "案例2", attrVal: "室内家具" }]
+                },
+                {
+                    logo:
+                    "https://lg-brsj9y76-1257636768.cos.ap-shanghai.myqcloud.com/inner3.jpg",
+                    code: "",
+
+                    attrs: [{ attrName: "案例3", attrVal: "人造草坪" }]
+                },
+                {
+                    logo:
+                    "https://lg-brsj9y76-1257636768.cos.ap-shanghai.myqcloud.com/inner4.jpg",
+                    code: "",
+
+                    attrs: [{ attrName: "案例4", attrVal: "大型户外玩具" }]
+                },
+                {
+                    logo:
+                    "https://lg-brsj9y76-1257636768.cos.ap-shanghai.myqcloud.com/inner5.jpg",
+                    code: "",
+
+                    attrs: [{ attrName: "案例4", attrVal: "大型户外玩具" }]
+                },
+                {
+                    logo:
+                    "https://lg-brsj9y76-1257636768.cos.ap-shanghai.myqcloud.com/inner6.jpg",
+                    code: "",
+
+                    attrs: [{ attrName: "案例4", attrVal: "大型户外玩具" }]
+                },
+                {
+                    logo:
+                    "https://lg-brsj9y76-1257636768.cos.ap-shanghai.myqcloud.com/inner7.jpg",
+                    code: "",
+
+                    attrs: [{ attrName: "案例4", attrVal: "大型户外玩具" }]
+                }
+            ],
+            out: [
+                {
+                    logo:
+                    "https://lg-brsj9y76-1257636768.cos.ap-shanghai.myqcloud.com/out1.jpg",
+                    code: "",
+                    attrs: [{ attrName: "案例1", attrVal: "PVC" }]
+                },
+                {
+                    logo:
+                    "https://lg-brsj9y76-1257636768.cos.ap-shanghai.myqcloud.com/out2.jpg",
+                    code: "",
+                    attrs: [{ attrName: "案例2", attrVal: "室内家具" }]
+                },
+                {
+                    logo:
+                    "https://lg-brsj9y76-1257636768.cos.ap-shanghai.myqcloud.com/out3.jpg",
+                    code: "",
+
+                    attrs: [{ attrName: "案例3", attrVal: "人造草坪" }]
+                },
+                {
+                    logo:
+                    "https://lg-brsj9y76-1257636768.cos.ap-shanghai.myqcloud.com/out4.jpg",
+                    code: "",
+
+                    attrs: [{ attrName: "案例4", attrVal: "大型户外玩具" }]
+                },
+                {
+                    logo:
+                    "https://lg-brsj9y76-1257636768.cos.ap-shanghai.myqcloud.com/out5.jpg",
+                    code: "",
+
+                    attrs: [{ attrName: "案例4", attrVal: "大型户外玩具" }]
+                },
+                {
+                    logo:
+                    "https://lg-brsj9y76-1257636768.cos.ap-shanghai.myqcloud.com/out6.jpg",
+                    code: "",
+
+                    attrs: [{ attrName: "案例4", attrVal: "大型户外玩具" }]
+                },
+                {
+                    logo:
+                    "https://lg-brsj9y76-1257636768.cos.ap-shanghai.myqcloud.com/out7.jpg",
+                    code: "",
+
+                    attrs: [{ attrName: "案例4", attrVal: "大型户外玩具" }]
+                },
+                {
+                    logo:
+                    "https://lg-brsj9y76-1257636768.cos.ap-shanghai.myqcloud.com/out8.jpg",
+                    code: "",
+
+                    attrs: [{ attrName: "案例4", attrVal: "大型户外玩具" }]
+                },
+                {
+                    logo:
+                    "https://lg-brsj9y76-1257636768.cos.ap-shanghai.myqcloud.com/out9.jpg",
+                    code: "",
+
+                    attrs: [{ attrName: "案例4", attrVal: "大型户外玩具" }]
+                }
+            ],
+            
+    }
+    
+    
+  };
+
+  onLoad(option) {
+    this.catCode = option.code;
+   
+  }
+  computed = {};
+  methods = {};
+  events = {};
+}
+</script>
+<style lang="less">
+
+.discover_list {
+  .discover_img {
+    width: 100%;
+    height: 600rpx;
+  }
+  .info {
+    padding: 5rpx;
+    color: #000000;
+    font-size: 26rpx;
+    line-height: 35rpx;
+    display: flex;
+    align-items: center;
+  }
+  .item {
+    background: #fff;
+    padding: 15rpx;
+    margin-bottom: 15rpx;
+  }
+}
+
+.bc {
+  background: #f7f7f7;
+}
+
+.info_block {
+  margin-top: 10rpx;
+  .item {
+    background: #fff;
+    padding: 34rpx 28rpx;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 5rpx solid #dbdbdb;
+  }
+  .item:last-child {
+    border-bottom:5rpx solid #dbdbdb;
+  }
+  .item_content {
+    display: flex;
+    align-items: center;
+    .text {
+      margin-left: 0rpx;
+      color: #029AE5;
+      font-size: 30;
+    }
+  }
+  .item_img {
+    width: 42rpx;
+    height: 42rpx;
+  }
+  .arrow {
+    color: #cccccc;
+    font-size: 32rpx;
+  }
+  .tip {
+    color: #999;
+    font-size: 24rpx;
+    margin-top: 20rpx;
+    margin-left: 60rpx;
+  }
+}
+</style>
